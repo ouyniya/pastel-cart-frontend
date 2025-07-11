@@ -1,4 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap");
+
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: pastel --default, dim --prefersdark;
+  themes: pastel --default, forest --prefersdark;
+}
+
+:root {
+  --font-sans: "Zen Maru Gothic", sans-serif;
+  --font-serif: "Kosugi Maru", sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 500;
+}
+
+@keyframes load {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1.75rem);
+  }
+}
+
+.stripe-animation::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 150%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    60deg,
+    transparent,
+    transparent 0.75rem,
+    #9df0fc 0.75rem,
+    #9df0fc 1.5rem
+  );
+  animation: load 1s infinite linear;
+  z-index: -1;
 }

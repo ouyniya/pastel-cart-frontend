@@ -9,7 +9,6 @@ const ThemeToggle = () => {
         value="synthwave"
         className="theme-controller"
         onClick={() => {
-          console.log("test");
           actionToggleTheme();
         }}
       />

@@ -1,5 +1,6 @@
 import AppRoutes from "./routes/App-routes";
 import useThemeStore from "./stores/overall-store";
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   const theme = useThemeStore((state) => state.theme);
@@ -7,9 +8,9 @@ function App() {
   return (
     <>
       <div
-        data-theme={theme ? "pastel" : "dim"}
-        className="min-h-screen antialiased"
+        data-theme={theme ? "pastel" : "forest"}
       >
+        <ToastContainer />
         <AppRoutes />
       </div>
     </>
