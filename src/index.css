@@ -2,7 +2,7 @@
 
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: pastel --default, forest --prefersdark;
+  themes: pastel --default, coffee --prefersdark;
 }
 
 :root {
@@ -24,8 +24,44 @@ body {
   }
 }
 
+@keyframes ring {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-0.2rem);
+  }
+  20% {
+    transform: translateX(0.2rem);
+  }
+  30% {
+    transform: translateX(-0.2rem);
+  }
+  40% {
+    transform: translateX(0.2rem);
+  }
+  50% {
+    transform: translateX(-0.1rem);
+  }
+  60% {
+    transform: translateX(0.1rem);
+  }
+  70% {
+    transform: translateX(-0.05rem);
+  }
+  80% {
+    transform: translateX(0.05rem);
+  }
+  90% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .stripe-animation::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   width: 150%;
@@ -34,9 +70,13 @@ body {
     60deg,
     transparent,
     transparent 0.75rem,
-    #9df0fc 0.75rem,
-    #9df0fc 1.5rem
+    #9df0fc75 0.75rem,
+    #9df0fc75 1.5rem
   );
   animation: load 1s infinite linear;
   z-index: -1;
+}
+
+.animate-bell-ring {
+  animation: ring 1s infinite ease-in-out;
 }

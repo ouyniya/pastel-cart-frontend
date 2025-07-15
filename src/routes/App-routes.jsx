@@ -15,6 +15,8 @@ import HomeUser from "../pages/user/Home-user";
 import Layout from "../layouts/Layout";
 import LayoutAdmin from "../layouts/Layout-admin";
 import LayoutUser from "../layouts/Layout-user";
+import ProtectRouteUser from "./Protect-route-user";
+import SoftProtectRoute from "./Soft-protect-route";
 
 const router = createBrowserRouter([
   {
@@ -26,13 +28,19 @@ const router = createBrowserRouter([
       { path: "/cart", element: <Cart /> },
       { path: "/history", element: <History /> },
       { path: "/checkout", element: <Checkout /> },
+    ],
+  },
+  {
+    path: "/",
+    element: <SoftProtectRoute element={<Layout />} />,
+    children: [
       { path: "/login", element: <Login /> },
       { path: "/register", element: <Register /> },
     ],
   },
   {
     path: "/admin",
-    element: <LayoutAdmin />,
+    element: <ProtectRouteUser element={<LayoutAdmin role={"ADMIN"} />} />,
     children: [
       { index: true, element: <Dashboard /> },
       { path: "category", element: <Category /> },
@@ -42,7 +50,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/user",
-    element: <LayoutUser />,
+    element: <ProtectRouteUser element={<LayoutUser role={"USER"} />} />,
     children: [{ index: true, element: <HomeUser /> }],
   },
 ]);
