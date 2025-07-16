@@ -29,7 +29,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:gap-4 gap-4">
+      <div className="grid grid-cols-1 md:gap-4 gap-4 max-w-5xl">
 
         <div className="flex justify-between items-center">
         {loading ? "loading..." : <ContentWelcome user={user} />}

@@ -1,4 +1,7 @@
-import axiosInstance from "./utils/axiosInstance";
+import axiosInstance from "../utils/axiosInstance";
+
+export const login = async (form) =>
+  await axiosInstance.post(`/api/login`, form);
 
 export const currentUser = async () =>
   await axiosInstance.get(`/api/current-user`);

@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const sidebarItems = [
-  { icon: <Home size={20} />, label: "Overview", link: "#" },
-  { icon: <User2 size={20} />, label: "Users", link: "#" },
-  { icon: <Box size={20} />, label: "Products", link: "#" },
-  { icon: <GroupIcon size={20} />, label: "Categories", link: "#" },
+  { icon: <Home size={20} />, label: "Overview", link: "/admin" },
+  { icon: <User2 size={20} />, label: "Users", link: "/admin/Manage" },
+  { icon: <Box size={20} />, label: "Products", link: "/admin/product" },
+  { icon: <GroupIcon size={20} />, label: "Categories", link: "/admin/category" },
 ];
 
 const SidebarAdmin = () => {

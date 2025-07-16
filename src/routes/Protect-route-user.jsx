@@ -24,7 +24,7 @@ const ProtectRouteUser = ({ element }) => {
             const getRole = data?.data?.user?.role;
             setRole(getRole);
             setPermit(true);
-            console.log("current user", data)
+            // console.log("current user", data)
           })
           .catch((error) => {
             setPermit(false);

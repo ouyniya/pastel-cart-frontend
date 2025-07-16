@@ -1,6 +1,6 @@
-import axios from "axios";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
+import { login } from "../api/auth";
 
 const usePersist = {
   name: "ecom-store",
@@ -13,10 +13,7 @@ const useEcommerceStore = create(
       token: null,
       user: null,
       actionLogin: async (form) => {
-        const res = await axios.post(
-          `${import.meta.env.VITE_API_URL}/api/login`,
-          form
-        );
+        const res = await login(form);
         set({
           token: res.data.token,
           user: res.data.user,
