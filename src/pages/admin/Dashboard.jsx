@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import useEcommerceStore from "../../stores/ecommerce-store";
 import { currentUser } from "../../api/auth";
 import { toast } from "react-toastify";
 
@@ -11,13 +10,12 @@ import HeaderAdmin from "../../components/admin/HeaderAdmin";
 const Dashboard = () => {
   const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
-  const token = useEcommerceStore((state) => state.token);
 
   useEffect(() => {
     setLoading(true);
 
     setTimeout(() => {
-      currentUser(token)
+      currentUser()
         .then((data) => {
           setUser(data?.data?.user);
         })

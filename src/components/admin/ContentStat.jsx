@@ -1,7 +1,15 @@
+import { motion } from "framer-motion";
+
 const ContentStat = () => {
   return (
     <>
-      <div className="flex flex-col lg:flex-row gap-4 w-full">
+      <motion.div
+      initial={{ opacity: 0, scale: 1.1 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ delay: 0.3 , type: "spring", stiffness: 150 }}
+      
+      
+      className="flex flex-col lg:flex-row gap-4 w-full">
         <div className="stats shadow w-full bg-base-100">
           <div className="stat">
             <div className="stat-figure text-primary">
@@ -62,7 +70,7 @@ const ContentStat = () => {
             <div className="stat-desc text-secondary-content/50">31 tasks remaining</div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

@@ -1,6 +1,6 @@
 import { Link, Navigate } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
-import useEcommerceStore from "../stores/ecommerce-store";
+import useEcommerceStore from "../stores/ecommerceStore";
 import { toast } from "react-toastify";
 import Logo from "./Logo";
 

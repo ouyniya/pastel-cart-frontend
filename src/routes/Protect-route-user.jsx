@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import useEcommerceStore from "../stores/ecommerce-store";
+import useEcommerceStore from "../stores/ecommerceStore";
 import { currentUser } from "../api/auth";
 import LoadingRedirect from "./Loading-redirect";
 import { useNavigate } from "react-router-dom";
@@ -19,7 +19,7 @@ const ProtectRouteUser = ({ element }) => {
     setLoading(true);
     if (user && token) {
       setTimeout(() => {
-        currentUser(token)
+        currentUser()
           .then((data) => {
             const getRole = data?.data?.user?.role;
             setRole(getRole);
@@ -29,7 +29,9 @@ const ProtectRouteUser = ({ element }) => {
           .catch((error) => {
             setPermit(false);
             setRole("GUEST");
+            
             const errMsg = error?.response?.data?.errors;
+            console.log(error)
 
             // token expired or wrong token
             if (errMsg === "jwt expired") {

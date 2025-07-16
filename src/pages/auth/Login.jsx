@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { twMerge } from "tailwind-merge";
-import useEcommerceStore from "../../stores/ecommerce-store";
+import useEcommerceStore from "../../stores/ecommerceStore";
 
 const Login = () => {
   const actionLogin = useEcommerceStore((state) => state.actionLogin);

@@ -1,5 +1,5 @@
 import AppRoutes from "./routes/App-routes";
-import useThemeStore from "./stores/overall-store";
+import useThemeStore from "./stores/overallStore";
 import { ToastContainer } from 'react-toastify';
 
 function App() {

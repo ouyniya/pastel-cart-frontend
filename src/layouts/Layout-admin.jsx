@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
-import useEcommerceStore from "../stores/ecommerce-store";
+import useEcommerceStore from "../stores/ecommerceStore";
 import NavbarAdmin from "../components/admin/NavbarAdmin";
 import SidebarAdmin from "../components/admin/SidebarAdmin";
 import { useEffect, useState } from "react";
@@ -47,7 +47,7 @@ const LayoutAdmin = ({ role }) => {
         <motion.div
           animate={{ width: showSidebar ? "calc(100% - 250px)" : "100%" }}
           transition={{ type: "spring", stiffness: 100, damping: 18, velocity: -100  }}
-          className="px-8 py-8 mt-4 overflow-auto !w-full md:w-full bg-base-100/50 backdrop-blur-md rounded-l-4xl shadow-2xl shadow-primary"
+          className="px-8 py-8 mt-4 overflow-auto !w-full md:w-full bg-base-100/50 backdrop-blur-md rounded-l-4xl shadow-sm"
         >
           <Outlet />
         </motion.div>

@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import useEcommerceStore from "../stores/ecommerce-store";
+import useEcommerceStore from "../stores/ecommerceStore";
 
 const SoftProtectRoute = ({ element }) => {
   const user = useEcommerceStore((state) => state.user);

@@ -1,4 +1,4 @@
-import useThemeStore from "../stores/overall-store";
+import useThemeStore from "../stores/overallStore";
 
 const ThemeToggle = () => {
   const actionToggleTheme = useThemeStore((state) => state.actionToggleTheme);

@@ -1,6 +1,10 @@
+import FormCategory from "../../components/admin/FormCategory";
+
 const Category = () => {
   return (
-    <div>Category</div>
-  )
-}
-export default Category
+    <div>
+      <FormCategory />
+    </div>
+  );
+};
+export default Category;

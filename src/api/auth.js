@@ -1,16 +1,7 @@
-import axios from "axios";
+import axiosInstance from "./utils/axiosInstance";
 
-export const currentUser = async (token) =>
-  await axios.get(`${import.meta.env.VITE_API_URL}/api/current-user`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+export const currentUser = async () =>
+  await axiosInstance.get(`/api/current-user`);
 
-export const currentAdmin = async (token) => {
-  await axios.get(`${import.meta.env.VITE_API_URL}/api/current-admin`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-};
+export const currentAdmin = async () =>
+  await axiosInstance.get(`/api/current-admin`);

@@ -17,7 +17,7 @@ const SidebarAdmin = () => {
       transition={{ duration: 0, ease: "easeOut" }}
       className="w-full py-12 px-4"
     >
-      <ul className="flex flex-col rounded-box gap-2 w-80 bg-neutral shadow-xl text-base-100 py-4">
+      <ul className="flex flex-col rounded-box gap-2 w-80 bg-neutral shadow-sm text-base-100 py-4">
         {sidebarItems.map((item, i) => (
           <motion.li
             key={i}

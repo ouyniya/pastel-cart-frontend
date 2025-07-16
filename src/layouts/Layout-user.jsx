@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
-import useEcommerceStore from "../stores/ecommerce-store";
+import useEcommerceStore from "../stores/ecommerceStore";
 
 const LayoutUser = ({ role }) => {
   const user = useEcommerceStore((state) => state.user);
