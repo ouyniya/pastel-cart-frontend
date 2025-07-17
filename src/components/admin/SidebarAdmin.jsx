@@ -17,7 +17,7 @@ const SidebarAdmin = () => {
       transition={{ duration: 0, ease: "easeOut" }}
       className="w-full py-12 px-4"
     >
-      <ul className="flex flex-col rounded-box gap-2 w-80 bg-neutral shadow-sm text-base-100 py-4">
+      <ul className="flex flex-col rounded-box gap-2 w-80 bg-neutral shadow-sm text-secondary py-4">
         {sidebarItems.map((item, i) => (
           <motion.li
             key={i}
@@ -31,7 +31,7 @@ const SidebarAdmin = () => {
           >
             <Link
               to={item.link}
-              className="flex items-center gap-3 text-base-100 hover:text-white px-4 py-3 hover:bg-neutral-content/10 rounded-none"
+              className="flex items-center gap-3 hover:text-white px-4 py-3 hover:bg-neutral-content/10 rounded-none"
             >
               <motion.span
                 whileHover={{ rotate: 10 }}

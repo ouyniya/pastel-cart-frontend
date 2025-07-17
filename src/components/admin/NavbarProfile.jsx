@@ -45,7 +45,7 @@ const NavbarProfile = () => {
           <Link to="#">Settings</Link>
         </li>
         <li>
-          <Link to="#" onClick={() => handleLogout()} className="text-secondary-content/40">
+          <Link to="#" onClick={() => handleLogout()} className="text-secondary">
             Logout
           </Link>
         </li>

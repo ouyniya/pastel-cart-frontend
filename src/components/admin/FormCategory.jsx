@@ -103,9 +103,7 @@ const FormCategory = ({ onSuccess, setLastAddedId, category }) => {
           <p className="absolute top-30 left-15 -rotate-12">🍰</p>
           <p className="absolute top-20 right-15 rotate-45">🥞 ۪</p>
           <p className="absolute top-30 right-8 rotate-30">🧁</p>
-          <p className="absolute top-25 right-20 rotate-45 animate-pulse">
-            ⋆˙⟡
-          </p>
+          <p className="absolute top-25 right-20 rotate-45 animate-pulse">⋆˙⟡</p>
           <p className="absolute top-20 left-20 rotate-0 animate-pulse">⋆˙⟡</p>
           <p className="absolute top-40 right-15 rotate-0">⋆˙</p>
           <p className="absolute top-35 left-10 rotate-45">˙</p>
@@ -129,7 +127,7 @@ const FormCategory = ({ onSuccess, setLastAddedId, category }) => {
           />
 
           {suggestions.length > 0 && (
-            <ul className="absolute top-10 lg:left-0 dropdown rounded-box p-2 shadow-sm mt-1 w-full max-w-[320px] max-h-40 overflow-y-auto bg-secondary/20 backdrop-blur-xs text-secondary-content/40">
+            <ul className="absolute top-10 lg:left-0 dropdown rounded-box p-2 shadow-sm mt-1 w-full max-w-[320px] max-h-40 overflow-y-auto bg-secondary/50 backdrop-blur-xs text-secondary-content">
               {suggestions.map((suggestion) => (
                 <li
                   key={suggestion.id}
@@ -149,7 +147,7 @@ const FormCategory = ({ onSuccess, setLastAddedId, category }) => {
         <button
           type="submit"
           onClick={(e) => handleCreateCategory(e)}
-          className="btn btn-soft btn-secondary max-w-max lg:ml-auto z-0"
+          className="btn btn-secondary max-w-max lg:ml-auto z-0"
         >
           {loading ? "Loading..." : "Add Category"}
         </button>

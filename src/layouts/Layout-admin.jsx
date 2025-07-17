@@ -21,7 +21,7 @@ const LayoutAdmin = ({ role }) => {
 
   return (
     <div
-      className="min-h-[100dvh] grid antialiased bg-gradient-to-br from-neutral/15 to-secondary text-slate-500"
+      className="h-[100dvh] grid antialiased bg-base-300 text-base"
       style={{
         gridTemplateRows: "auto 1fr auto",
         gridTemplateColumns: "minmax(0, 1fr)",
@@ -33,20 +33,29 @@ const LayoutAdmin = ({ role }) => {
       </motion.div>
 
       {/* Main area */}
+
       <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar */}
         <motion.div
           animate={{ width: showSidebar ? 250 : 0 }}
-          transition={{ type: "spring", stiffness: 100, damping: 18, velocity: -100 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 18,
+            velocity: -100,
+          }}
           className="overflow-hidden md:block hidden"
         >
           {showSidebar && <SidebarAdmin />}
         </motion.div>
 
-        {/* Content */}
         <motion.div
           animate={{ width: showSidebar ? "calc(100% - 250px)" : "100%" }}
-          transition={{ type: "spring", stiffness: 100, damping: 18, velocity: -100  }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 18,
+            velocity: -100,
+          }}
           className="px-8 py-8 mt-4 overflow-auto !w-full md:w-full bg-base-100/50 backdrop-blur-md rounded-l-4xl shadow-sm"
         >
           <Outlet />
@@ -54,7 +63,7 @@ const LayoutAdmin = ({ role }) => {
       </div>
 
       <FooterAdmin />
-       </div>
+    </div>
   );
 };
 export default LayoutAdmin;

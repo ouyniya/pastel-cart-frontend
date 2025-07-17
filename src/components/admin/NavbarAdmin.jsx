@@ -3,6 +3,7 @@ import { Menu } from "lucide-react";
 import NavbarNotification from "./NavbarNotification";
 import NavbarProfile from "./NavbarProfile";
 import Logo from "../Logo";
+import ThemeToggle from "../ThemeToggle";
 
 const NavbarAdmin = ({ setShowSidebar }) => {
   return (
@@ -29,6 +30,7 @@ const NavbarAdmin = ({ setShowSidebar }) => {
 
           {/* profile menu */}
           <NavbarProfile />
+           <ThemeToggle />
         </div>
       </div>
     </nav>

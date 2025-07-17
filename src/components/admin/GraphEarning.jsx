@@ -89,7 +89,6 @@ const EarningGraph = ({ data }) => {
             options={options}
             height={300}
             width={600}
-            getDatasetAtEvent={() => {}}
           />
         )}
       </div>

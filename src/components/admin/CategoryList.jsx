@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PencilLine, Sparkle, Sticker, Trash, ChevronDown } from "lucide-react";
+import { PencilLine, Sparkle, Sticker, Trash } from "lucide-react";
 import { toast } from "react-toastify";
 import { removeCategory } from "../../api/category";
 
@@ -19,7 +19,7 @@ const CategoryList = ({ onSuccess, category, loading, lastAddedId }) => {
         setTimeout(() => {
           onSuccess?.();
           setRemovingId(null); // clear id ที่ลบหลังโหลดใหม่
-        }, 5000);
+        }, 2000);
       });
     } catch (error) {
       console.log(error);
@@ -36,7 +36,11 @@ const CategoryList = ({ onSuccess, category, loading, lastAddedId }) => {
       <div className="card w-full h-96 bg-base-100 shadow-sm p-4">
         <div className="overflow-x-auto">
           {loading ? (
-            "loading..."
+            <div className="flex justify-center items-center w-full h-full">
+
+              <span className="loading loading-spinner text-secondary"></span>
+
+            </div>
           ) : (
             <table className="table">
               <thead>
@@ -47,7 +51,7 @@ const CategoryList = ({ onSuccess, category, loading, lastAddedId }) => {
                       <Sparkle
                         size={18}
                         opacity={0.5}
-                        className="text-accent-content/75"
+                        className="text-accent"
                       />
                       Name
                     </div>
@@ -57,7 +61,7 @@ const CategoryList = ({ onSuccess, category, loading, lastAddedId }) => {
                       <PencilLine
                         size={18}
                         opacity={0.5}
-                        className="text-secondary-content/75"
+                        className="text-secondary"
                       />
                       Updated
                     </div>
@@ -67,7 +71,7 @@ const CategoryList = ({ onSuccess, category, loading, lastAddedId }) => {
                       <Sticker
                         size={18}
                         opacity={0.5}
-                        className="text-primary-content/75"
+                        className="text-primary"
                       />
                       Action
                     </div>
@@ -113,7 +117,6 @@ const CategoryList = ({ onSuccess, category, loading, lastAddedId }) => {
                         <Trash
                           size={16}
                           opacity={0.5}
-                          className="text-primary-content/75"
                         />
                         {item.id === removingId ? "Removing" : "Remove"}
                       </button>

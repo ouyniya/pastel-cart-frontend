@@ -8,7 +8,7 @@ const HeaderAdmin = () => {
       animate={{ rotate: 0, scale: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <header className="w-full shadow-sm rounded-xl px-6 py-5 flex flex-col gap-6 md:flex-row md:items-center md:justify-between bg-gradient-to-r from-neutral to-secondary-content/25 text-white relative overflow-hidden">
+      <header className="w-full shadow-sm rounded-xl px-6 py-5 flex flex-col gap-6 md:flex-row md:items-center md:justify-between bg-secondary text-base relative overflow-hidden">
         {/* Overlay */}
         <div className="absolute inset-0 bg-base-100/20 backdrop-blur-3xl rounded-xl z-0"></div>
 

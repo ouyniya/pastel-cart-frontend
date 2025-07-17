@@ -2,7 +2,7 @@
 
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: pastel --default, coffee --prefersdark;
+  themes: pastel --default, sunset --prefersdark;
 }
 
 :root {
