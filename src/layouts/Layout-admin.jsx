@@ -33,7 +33,6 @@ const LayoutAdmin = ({ role }) => {
       </motion.div>
 
       {/* Main area */}
-
       <div className="flex flex-1 overflow-hidden">
         <motion.div
           animate={{ width: showSidebar ? 250 : 0 }}

@@ -4,10 +4,10 @@ export const INITIAL_STATE = {
   price: "100",
   quantity: "1",
   categoryId: "",
+  images: [],
 };
 
 export const ITEMS_PER_PAGE = 5;
-
 
 export const IMAGE_MAP = {
   Pudding:
@@ -31,4 +31,5 @@ export const IMAGE_MAP = {
     "https://images.unsplash.com/photo-1738573519644-93b700f3adf3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 };
 
-export const REST_IMAGE = "https://images.unsplash.com/photo-1738573519644-93b700f3adf3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+export const REST_IMAGE =
+  "https://images.unsplash.com/photo-1738573519644-93b700f3adf3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";

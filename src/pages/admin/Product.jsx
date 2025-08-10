@@ -10,13 +10,16 @@ const Product = () => {
   const [categories, setCategories] = useState([]);
   const [productData, setProductData] = useState(null);
   const [loading, setLoading] = useState(null);
+  const [fetchLoading, setFetchLoading] = useState(null);
   const [lastAddedId, setLastAddedId] = useState(null);
+  const [lastUpdatedId, setLastUpdatedId] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [totalItems, setTotalItems] = useState(0);
 
   const fetchCategories = async () => {
     try {
+      setFetchLoading(true);
       const res = await getCategory();
       const categoryData = res.data;
 
@@ -25,9 +28,13 @@ const Product = () => {
         image: IMAGE_MAP[item.name] || REST_IMAGE,
       }));
 
-      setCategories(withImage);
+      setTimeout(() => {
+        setCategories(withImage);
+        setFetchLoading(false);
+      }, 2000);
     } catch (error) {
       console.log(error);
+      setFetchLoading(false);
       toast.error("Error loading categories");
     }
   };
@@ -50,6 +57,7 @@ const Product = () => {
       }, 500);
     } catch (error) {
       console.log(error);
+      setLoading(false);
       // Zod error
       if (Array.isArray(error?.response?.data?.errors)) {
         const mergeError = error?.response?.data?.errors?.map(
@@ -75,10 +83,19 @@ const Product = () => {
     if (!lastAddedId) return;
 
     const resetLastAddedId = () => setLastAddedId(null);
-    const timerId = setTimeout(resetLastAddedId, 3000);
+    const timerId = setTimeout(resetLastAddedId, 1500);
 
     return () => clearTimeout(timerId);
   }, [lastAddedId]);
+
+  useEffect(() => {
+    if (!lastUpdatedId) return;
+
+    const resetLastUpdatedId = () => setLastUpdatedId(null);
+    const timerId = setTimeout(resetLastUpdatedId, 1500);
+
+    return () => clearTimeout(timerId);
+  }, [lastUpdatedId]);
 
   return (
     <div className="flex flex-col gap-4 md:gap-8 max-w-5xl">
@@ -95,6 +112,8 @@ const Product = () => {
         product={productData}
         loading={loading}
         lastAddedId={lastAddedId}
+        lastUpdatedId={lastUpdatedId}
+        setLastUpdatedId={setLastUpdatedId}
         totalItems={totalItems}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
@@ -106,7 +125,7 @@ const Product = () => {
 
       <FormProduct
         categories={categories}
-        product={productData}
+        fetchLoading={fetchLoading}
         setLastAddedId={setLastAddedId}
         onSuccess={() => {
           fetchProducts();

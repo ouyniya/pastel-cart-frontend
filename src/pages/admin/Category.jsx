@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { getCategory } from "../../api/category";
 import { IMAGE_MAP, REST_IMAGE } from "../../utils/constant";
+import CategorySlide from "../../components/admin/CategorySlide";
 
 const Category = () => {
   const [categories, setCategories] = useState([]);
@@ -18,9 +19,7 @@ const Category = () => {
 
       const withImage = categoryData.map((item) => ({
         ...item,
-        image:
-          IMAGE_MAP[item.name] ||
-          REST_IMAGE, // fallback เผื่อไม่มีรูป
+        image: IMAGE_MAP[item.name] || REST_IMAGE, // fallback เผื่อไม่มีรูป
       }));
 
       setCategories(withImage);
@@ -79,6 +78,7 @@ const Category = () => {
           />
         </div>
       </div>
+      <CategorySlide category={categories} />
     </div>
   );
 };
